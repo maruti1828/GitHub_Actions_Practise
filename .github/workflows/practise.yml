@@ -1,0 +1,12 @@
+name: practise
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: it is practical
+        run: echo "hello"
