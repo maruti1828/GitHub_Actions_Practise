@@ -9,4 +9,4 @@ jobs:
 
     steps:
       - name: it is practical
-        run: echo "hello"
+        run: mkdir new
