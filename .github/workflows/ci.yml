@@ -1,7 +1,7 @@
 name: ci
 
 on:
-  workflow_dispatch:
+  push:
     paths: "*.py"
 
 jobs:
@@ -10,6 +10,12 @@ jobs:
     steps:
       - name: checkout/clone code
         uses: actions/checkout@v7
+      - name: install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: linter install
         uses: pip install ruff
+      - name: Run Ruff Linter
+        run: ruff check . --output-format=github  
     
